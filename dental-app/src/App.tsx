@@ -13,13 +13,18 @@ import AdminLoginPage from './pages/admin/AdminLoginPage'
 import AdminDashboardPage from './pages/admin/AdminDashboardPage'
 import { dentalTheme } from './theme/theme'
 
+const routerBasename =
+  import.meta.env.BASE_URL === '/'
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, '')
+
 const BookingRedirect = () => <Navigate to="/" replace />
 
 const App = () => (
   <ThemeProvider theme={dentalTheme}>
     <CssBaseline />
     <AppGlobalStyles />
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>

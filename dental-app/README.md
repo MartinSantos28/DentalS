@@ -75,3 +75,38 @@ Limpieza Dental · Blanqueamiento · Ortodoncia · Odontopediatría · Endodonci
 ## Guía de diseño (UI/UX)
 
 Ver [`docs/STYLEGUIDE.md`](docs/STYLEGUIDE.md) — paleta slate/dorado, accesibilidad WCAG 2.1, mobile-first y componentes del sistema.
+
+## Despliegue en GitHub Pages
+
+El workflow [`.github/workflows/deploy-pages.yml`](../.github/workflows/deploy-pages.yml) publica solo el **frontend** al hacer push a `main`.
+
+**URL:** `https://martinsantos28.github.io/DentalS/`
+
+### Activar Pages (una vez)
+
+1. En GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**
+2. Haz push a `main` (o ejecuta el workflow manualmente en **Actions**)
+3. Espera el job **Deploy GitHub Pages** (verde)
+
+### Secretos opcionales (Settings → Secrets → Actions)
+
+| Secreto | Uso |
+|---------|-----|
+| `VITE_ADMIN_PASSWORD` | Contraseña del panel `/admin` en producción |
+| `VITE_ADMIN_SESSION_KEY` | Token de sesión admin (debe coincidir con el del API si lo usas) |
+| `VITE_API_URL` | URL del API Express (ej. `https://tu-api.onrender.com`) |
+
+Sin `VITE_API_URL`, el sitio estático funciona (navegación, WhatsApp wa.me), pero **agendar citas y listar citas en admin requieren el API** desplegado en otro servicio (Render, Railway, Fly.io, VPS, etc.).
+
+### Build local (misma base que Pages)
+
+```bash
+# PowerShell
+$env:VITE_BASE_PATH="/DentalS/"
+npm run build
+npm run preview
+```
+
+### Limitación
+
+GitHub Pages **no ejecuta** Node/SQLite. El backend (`npm run dev:server`) debe hospedarse aparte y configurar `VITE_API_URL` + CORS en el servidor.
