@@ -9,6 +9,7 @@ import Alert from '@mui/material/Alert'
 import { adminLogin } from '../../api/admin'
 import { SITE } from '../../data/content'
 import { brandColors } from '../../theme/brand'
+import { CLINIC_BRAND_IMAGE } from '../../utils/publicAsset'
 
 const AdminLoginPage = () => {
   const [password, setPassword] = useState('')
@@ -50,7 +51,7 @@ const AdminLoginPage = () => {
       >
         <Box
           component="img"
-          src="/logo.png"
+          src={CLINIC_BRAND_IMAGE}
           alt={SITE.name}
           sx={{ height: 48, display: 'block', mx: 'auto', mb: 2 }}
         />

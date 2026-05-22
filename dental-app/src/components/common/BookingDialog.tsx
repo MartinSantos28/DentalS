@@ -19,6 +19,7 @@ import Divider from '@mui/material/Divider'
 import { Close, CheckCircle, LocationOn, Phone } from '@mui/icons-material'
 import { CLINIC_SERVICES, SITE } from '../../data/content'
 import { brandColors } from '../../theme/brand'
+import { CLINIC_BRAND_IMAGE } from '../../utils/publicAsset'
 import { createBooking, fetchAvailability, type BookingResponse, type TimeSlot } from '../../api/booking'
 
 const BOOKING_IMAGE =
@@ -89,13 +90,13 @@ const BookingPanel = () => (
       <Box>
         <Box
           component="img"
-          src="/logo.png"
-          alt=""
+          src={CLINIC_BRAND_IMAGE}
+          alt={SITE.name}
           sx={{
             height: 48,
             width: 'auto',
             mb: 3,
-            filter: 'brightness(0) invert(1)',
+            objectFit: 'contain',
             opacity: 0.95,
           }}
         />

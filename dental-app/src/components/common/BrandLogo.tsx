@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import { Link as RouterLink } from 'react-router-dom'
 import { SITE } from '../../data/content'
+import { CLINIC_BRAND_IMAGE } from '../../utils/publicAsset'
 
 type BrandLogoProps = {
   height?: number
@@ -19,7 +20,7 @@ const BrandLogo = ({ height = 56 }: BrandLogoProps) => (
   >
     <Box
       component="img"
-      src="/logo.png"
+      src={CLINIC_BRAND_IMAGE}
       alt={`${SITE.doctorName} — ${SITE.name}`}
       sx={{
         height,

@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack'
 import { ArrowForward } from '@mui/icons-material'
 import { CLINIC_SERVICES, SERVICES_HERO, SITE } from '../../data/content'
 import { brandColors } from '../../theme/brand'
+import { CLINIC_BRAND_IMAGE } from '../../utils/publicAsset'
 
 type ServicesContentProps = {
   onBookingClick: () => void
@@ -47,7 +48,7 @@ const ServicesContent = ({ onBookingClick }: ServicesContentProps) => {
         <Container maxWidth="lg">
           <Box
             component="img"
-            src="/logo.png"
+            src={CLINIC_BRAND_IMAGE}
             alt={SITE.name}
             sx={{ height: 56, mb: 2 }}
           />

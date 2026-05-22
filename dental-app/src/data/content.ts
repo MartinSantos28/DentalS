@@ -1,3 +1,5 @@
+import { CLINIC_BRAND_IMAGE } from '../utils/publicAsset'
+
 export type Doctor = {
   id: string
   name: string
@@ -107,7 +109,7 @@ export const TEAMS_INTRO = {
   title: 'Transformamos sonrisas con diseño y precisión',
   description:
     `${SITE.doctorName} dirige ${SITE.name} en ${SITE.city}, ofreciendo tratamientos de odontología estética con resultados naturales. Conoce nuestro trabajo y agenda tu consulta.`,
-  imageSrc: '/logo-horizontal.png',
+  imageSrc: CLINIC_BRAND_IMAGE,
   imageAlt: `${SITE.doctorName} — ${SITE.name}, odontología estética en ${SITE.city}`,
 }
 
