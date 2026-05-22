@@ -8,9 +8,7 @@ import { ArrowForward } from '@mui/icons-material'
 import LazyImage from '../common/LazyImage'
 import { HERO } from '../../data/content'
 import { brandColors } from '../../theme/brand'
-
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1629909613654-28e377b37e8f?w=900&q=80'
+import { CLINIC_BRAND_IMAGE } from '../../utils/publicAsset'
 
 type HeroSectionProps = {
   onDetailsClick: () => void
@@ -88,12 +86,15 @@ const HeroSection = ({ onDetailsClick, onBookingClick }: HeroSectionProps) => {
           </Grid>
           <Grid size={{ xs: 12, md: 5 }}>
             <LazyImage
-              src={HERO_IMAGE}
-              alt="Consultorio de odontología estética DS Dental Aesthetics"
+              src={CLINIC_BRAND_IMAGE}
+              alt="DS Dental Aesthetics — Dr. Daniel Sarmiento, odontología estética en Cintalapa"
               aspectRatio="5/4"
+              objectFit="contain"
+              priority
               sx={{
                 border: `2px solid ${brandColors.gold}`,
                 boxShadow: '0 16px 40px rgba(74, 85, 104, 0.12)',
+                bgcolor: brandColors.white,
               }}
             />
           </Grid>

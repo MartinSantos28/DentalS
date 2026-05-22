@@ -106,6 +106,7 @@ const TeamsIntroSection = ({ onServicesClick, onBookingClick }: TeamsIntroSectio
                 alt={TEAMS_INTRO.imageAlt}
                 aspectRatio="16/10"
                 objectFit="contain"
+                priority
                 backgroundColor={brandColors.white}
                 sx={{
                   borderRadius: 2,
